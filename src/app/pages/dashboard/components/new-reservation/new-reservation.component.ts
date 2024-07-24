@@ -82,18 +82,6 @@ export class NewReservationComponent {
                         confirmButtonText: 'Cerrar'
                     });
                 }, 1000);
-
-                // this._furnitureService.unassign(item.asignacion_mueble[0]?.id, text).subscribe(result => {
-                //     this.getData()
-                //     Swal.close();
-                //     Swal
-                //         .fire('¡Desasignado!', result.message, 'success');
-                // }, error => {
-                //     Swal.close();
-                //     Swal.fire('¡Error!', error.message || 'Hubo un error', 'error')
-                // }, () => {
-
-                // })
             }
         });
 
