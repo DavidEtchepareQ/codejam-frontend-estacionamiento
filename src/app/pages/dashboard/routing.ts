@@ -6,6 +6,7 @@ import { ActualReservationComponent } from './components/actual-reservation/actu
 import { HistoricReservationsComponent } from './components/historic-reservations/historic-reservations.component';
 import { Error404Component } from './components/error-404/error-404.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
+import { ParkingsListComponent } from './components/parkings-list/parkings-list.component';
 const routes: Routes = [{
     path: '',
     component: DashboardComponent,
@@ -48,6 +49,14 @@ const routes: Routes = [{
                     data: {
                         title: "Usuarios",
                         breadcrumb: "Usuarios",
+                    },
+                },
+                {
+                    path: 'estacionamientos',
+                    component: ParkingsListComponent,
+                    data: {
+                        title: "Estacionamientos",
+                        breadcrumb: "Estacionamientos",
                     },
                 },
                 {

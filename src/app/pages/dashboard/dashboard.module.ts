@@ -11,6 +11,7 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
 import { HistoricReservationsComponent } from './components/historic-reservations/historic-reservations.component';
 import { Error404Component } from './components/error-404/error-404.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
+import { ParkingsListComponent } from './components/parkings-list/parkings-list.component';
 
 
 
@@ -21,7 +22,8 @@ import { UsersListComponent } from './components/users-list/users-list.component
         ActualReservationComponent,
         HistoricReservationsComponent,
         Error404Component,
-        UsersListComponent
+        UsersListComponent,
+        ParkingsListComponent
     ],
     imports: [
         CommonModule,

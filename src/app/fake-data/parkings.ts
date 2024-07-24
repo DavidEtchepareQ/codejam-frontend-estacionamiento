@@ -1,4 +1,4 @@
-export const USERS = [
+export const PARKINGS = [
     {
         id: 1,
         codigo: "100",

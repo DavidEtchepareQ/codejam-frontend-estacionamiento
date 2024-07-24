@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
+import { PARKINGS } from '../fake-data/parkings';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class ParkingsService {
 
-  constructor() { }
+    constructor() { }
+
+    getList() {
+        return PARKINGS
+    }
 }
