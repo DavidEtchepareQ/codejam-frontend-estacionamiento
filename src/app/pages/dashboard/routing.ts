@@ -1,50 +1,36 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { DashboardComponent } from './dashboard.component';
+import { NewReservationComponent } from './components/new-reservation/new-reservation.component';
+import { ActualReservationComponent } from './components/actual-reservation/actual-reservation.component';
 const routes: Routes = [{
     path: '',
     component: DashboardComponent,
     children: [
         {
             path: '',
-            redirectTo: 'inicio',
+            redirectTo: 'reservar',
             pathMatch: 'full',
         },
-        // {
-        //     path: 'administracion',
-        //     loadChildren: () => import('projects/pages/src/public-api').then(m => m.AdministrationModule),
-        //     data: {
-        //         title: "Administración",
-        //         breadcrumb: "Administración",
-        //     },
-        // },
-        // {
-        //     path: 'reporteria',
-        //     loadChildren: () => import('projects/pages/src/public-api').then(m => m.ReporteriaModule),
-        //     data: {
-        //         title: "Reportería",
-        //         breadcrumb: "Reportería",
-        //     },
-        // },
-        // {
-        //     path: 'asignaciones',
-        //     loadChildren: () => import('projects/pages/src/public-api').then(m => m.AsignationModule),
-        //     data: {
-        //         title: "Asignaciones",
-        //         breadcrumb: "Asignaciones",
-        //     },
-        // },
-        // {
-        //     path: 'inicio',
-        //     loadChildren: () => import('projects/pages/src/public-api').then(m => m.HomeModule),
-        //     data: {
-        //         title: "Inicio",
-        //         breadcrumb: "Inicio",
-        //     },
-        // },
+        {
+            path: 'reservar',
+            component: NewReservationComponent,
+            data: {
+                title: "Nueva reserva",
+                breadcrumb: "Nueva reserva",
+            },
+        },
+        {
+            path: 'reservas-disponibles',
+            component: ActualReservationComponent,
+            data: {
+                title: "Reservas disponibles",
+                breadcrumb: "Reservas disponibles",
+            },
+        },
         {
             path: '**',
-            redirectTo: 'inicio'
+            redirectTo: 'reservar'
         },
     ]
 }];

@@ -30,16 +30,16 @@ export const NavigationItems: NavigationItem[] = [
                 title: 'Reservar',
                 type: 'item',
                 classes: 'nav-item',
-                url: '/dashboard/users',
+                url: '/reservar',
                 icon: 'plus',
                 breadcrumbs: false
             },
             {
-                id: 'reserva-actual',
-                title: 'Reserva actual',
+                id: 'reservas-disponibles',
+                title: 'Reservas disponibles',
                 type: 'item',
                 classes: 'nav-item',
-                url: '/dashboard/users',
+                url: '/reservas-disponibles',
                 icon: 'car',
                 breadcrumbs: false
             },
@@ -48,7 +48,7 @@ export const NavigationItems: NavigationItem[] = [
                 title: 'Historial',
                 type: 'item',
                 classes: 'nav-item',
-                url: '/dashboard/users',
+                url: '/historial',
                 icon: 'calendar',
                 breadcrumbs: false
             }

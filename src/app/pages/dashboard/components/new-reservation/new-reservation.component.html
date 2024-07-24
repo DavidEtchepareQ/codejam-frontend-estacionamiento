@@ -1,1 +1,52 @@
-<p>new-reservation works!</p>
+<div class="card">
+    <div class="card-header">
+        Reservar estacionamiento
+    </div>
+    <div class="card-body text-center px-0">
+
+        <form *ngIf="form" class="form-signin text-center" [formGroup]="form" (ngSubmit)="submit()">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Selecciona día</label>
+                        <br>
+                        <ngb-datepicker #dp formControlName="date" outsideDays="hidden" [markDisabled]="disabledDates" />
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Selecciona horario</label>
+
+                        <br>
+
+                        <div class="btn-group d-block">
+                            @for (period of periods; track period) {
+                            <button type="button" class="btn btn-primary"
+                                [disabled]="form.get('period').value == period.value" (click)="selectPeriod(period)">
+                                {{ period.text }}
+                                <br>
+                                <small>
+                                    {{ period.description }}
+                                </small>
+                            </button>
+                            }
+                        </div>
+
+                    </div>
+
+                    <div class="px-3">
+                        <hr>
+                    </div>
+                    <div class="d-grip gap-1 px-3">
+
+                        <button class="btn btn-primary w-100" [disabled]="form.invalid">
+                            Reservar estacionamiento
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
