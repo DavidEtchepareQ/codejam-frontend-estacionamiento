@@ -5,33 +5,40 @@
     <div class="card-body">
 
         @if (loading.reservations) {
-            <div class="text-center">
-                Cargando información...
-            </div>
+        <div class="text-center">
+            Cargando información...
+        </div>
         } @else {
-            <div class="row">
-                @for (reservation of reservations; track reservation) {
-                    <div class="col-md-6">
-                        <div class="alert alert-warning w-100 row">
-                            <div class="col-md-8">
-                                Fecha reserva: <b>{{ reservation.fecha_reserva | date: 'dd-MM-yyyy'}}</b>
-                                <br>
-                                Hora reserva: <b>{{ reservation.hora_reserva }}</b>
-                                <br>
-                                Estacionamiento asignado: <b>{{ reservation.estacionamiento }}</b>
-                            </div>
-                            <div class="col-md-4 my-auto text-center mt-3">
+        <div class="row">
+            @for (reservation of reservations; track reservation) {
+            <div [ngClass]="{
+                        'col-md-12': reservations.length === 1,
+                        'col-md-6': reservations.length > 1,
+                    }">
+                <div class="alert alert-warning w-100">
+                    <div class="row">
 
-                                <a class="stretched-link" href="#" (click)="cancel(reservation); false">
-                                    <icon name="trash" size="2x"></icon>
-                                    <br>
-                                    Cancelar reserva
-                                </a>
-                            </div>
+
+                        <div class="col-md-8">
+                            Fecha reserva: <b>{{ reservation.fecha_reserva | date: 'dd-MM-yyyy'}}</b>
+                            <br>
+                            Hora reserva: <b>{{ reservation.hora_reserva }}</b>
+                            <br>
+                            Estacionamiento asignado: <b>{{ reservation.estacionamiento }}</b>
+                        </div>
+                        <div class="col-md-4 my-auto text-center mt-3">
+
+                            <a class="stretched-link" href="#" (click)="cancel(reservation); false">
+                                <icon name="trash" size="2x"></icon>
+                                <br>
+                                Cancelar reserva
+                            </a>
                         </div>
                     </div>
-                }
+                </div>
             </div>
+            }
+        </div>
         }
 
     </div>

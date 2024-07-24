@@ -10,7 +10,8 @@ export class ReservationService {
     constructor() { }
 
     getActual() {
-        return RESERVATIONS;
+        const today = new Date();
+        return RESERVATIONS.filter(reservation => new Date(reservation.fecha_reserva) >= today);
     }
 
     getHistorical() {

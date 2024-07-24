@@ -1,1 +1,54 @@
-<p>historic-reservations works!</p>
+<div class="card">
+    <div class="card-header">
+        Reservas disponibles
+    </div>
+    <div class="card-body">
+
+        @if (loading.reservations) {
+        <div class="text-center">
+            Cargando información...
+        </div>
+        } @else {
+        <div class="table-responsive">
+
+            <table class="table table-sm">
+                <thead>
+                    <tr class="text-center">
+                        <th>Fecha reserva</th>
+                        <th>Hora reserva</th>
+                        <th>Estacionamiento</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (reservation of reservations; track reservation) {
+                    <tr class="text-center small">
+                        <td>{{ reservation.fecha_reserva | date: 'dd-MM-yyyy'}}</td>
+                        <td>
+                            {{ reservation.tipo_reserva?.text }}
+                            <br>
+                            <small class="text-muted">
+                                {{ reservation.tipo_reserva?.description }}
+                            </small>
+                        </td>
+                        <td>{{ reservation.estacionamiento }}</td>
+                        <td class="text-center">
+                            <span class="badge" [ngClass]="{
+                                'bg-danger': reservation.estado == 'CANCELADO',
+                                'bg-success': reservation.estado != 'CANCELADO'
+                            }">
+                                {{ reservation.estado }}
+                            </span>
+                        </td>
+
+                    </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+
+        }
+
+    </div>
+</div>
