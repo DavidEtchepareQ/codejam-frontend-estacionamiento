@@ -7,6 +7,8 @@ import { NavigationComponent } from '../../theme/layouts/admin-layout/navigation
 import { NavBarComponent } from '../../theme/layouts/admin-layout/nav-bar/nav-bar.component';
 import { NewReservationComponent } from './components/new-reservation/new-reservation.component';
 import { ActualReservationComponent } from './components/actual-reservation/actual-reservation.component';
+import { IconComponent } from '../../shared/components/icon/icon.component';
+import { HistoricReservationsComponent } from './components/historic-reservations/historic-reservations.component';
 
 
 
@@ -14,14 +16,16 @@ import { ActualReservationComponent } from './components/actual-reservation/actu
     declarations: [
         DashboardComponent,
         NewReservationComponent,
-        ActualReservationComponent
+        ActualReservationComponent,
+        HistoricReservationsComponent
     ],
     imports: [
         CommonModule,
         SharedModule,
         NavigationComponent,
         NavBarComponent,
-        RoutingModule
+        RoutingModule,
+        IconComponent
     ]
 })
 export class DashboardModule { }

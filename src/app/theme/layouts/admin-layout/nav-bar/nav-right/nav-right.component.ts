@@ -69,43 +69,12 @@ export class NavRightComponent {
 
     profile = [
         {
-            icon: 'edit',
-            title: 'Edit Profile'
-        },
-        {
             icon: 'user',
-            title: 'View Profile'
+            title: 'Mi cuenta'
         },
         {
-            icon: 'profile',
-            title: 'Social Profile'
+            icon: 'car',
+            title: 'Reservas disponibles'
         },
-        {
-            icon: 'wallet',
-            title: 'Billing'
-        }
-    ];
-
-    setting = [
-        {
-            icon: 'question-circle',
-            title: 'Support'
-        },
-        {
-            icon: 'user',
-            title: 'Account Settings'
-        },
-        {
-            icon: 'lock',
-            title: 'Privacy Center'
-        },
-        {
-            icon: 'comment',
-            title: 'Feedback'
-        },
-        {
-            icon: 'unordered-list',
-            title: 'History'
-        }
     ];
 }

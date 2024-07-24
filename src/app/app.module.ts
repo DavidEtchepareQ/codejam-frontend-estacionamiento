@@ -6,9 +6,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule, ToastrService, } from 'ngx-toastr';
 import { DecimalPipe } from '@angular/common';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDatepickerI18n, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './theme/shared/shared.module';
+import { CustomDatepickerI18n } from './config/calendar';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { SharedModule } from './theme/shared/shared.module';
     ],
     providers: [
         DecimalPipe,
-        { provide: ToastrService, useClass: ToastrService }
+        { provide: ToastrService, useClass: ToastrService },
+        { provide: NgbDatepickerI18n, useClass: CustomDatepickerI18n }
     ],
     bootstrap: [AppComponent]
 })
