@@ -65,7 +65,7 @@ export const NavigationItems: NavigationItem[] = [
                 title: 'Usuarios',
                 type: 'item',
                 classes: 'nav-item',
-                url: '/dashboard/users',
+                url: '/administracion/usuarios',
                 icon: 'team',
                 breadcrumbs: false
             },
@@ -74,7 +74,7 @@ export const NavigationItems: NavigationItem[] = [
                 title: 'Estacionamientos',
                 type: 'item',
                 classes: 'nav-item',
-                url: '/dashboard/users',
+                url: '/administracion/estacionamientos',
                 icon: 'car',
                 breadcrumbs: false
             }

@@ -1,0 +1,52 @@
+<div class="card">
+    <div class="card-header">
+        Usuarios
+    </div>
+    <div class="card-body">
+
+        @if (loading.users) {
+        <div class="text-center">
+            Cargando información...
+        </div>
+        } @else {
+        <div class="table-responsive">
+
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo electrónico</th>
+                        <th class="text-center">Estado</th>
+                        <th class="text-center">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (user of users; track user) {
+                    <tr class="small">
+                        <td>{{ user.nombre }}</td>
+                        <td>
+                            {{ user.correo_electronico }}
+                        </td>
+                        <td class="text-center">
+                            <icon [name]="user.estado ? 'check' : 'times'" [ngClass]="{
+                                'text-danger': !user.estado,
+                                'text-success': user.estado
+                            }"></icon>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-outline-warning ">
+                                <icon name="pencil"></icon> Modificar
+                            </a>
+                        </td>
+                        
+                    </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+
+        }
+
+    </div>
+</div>

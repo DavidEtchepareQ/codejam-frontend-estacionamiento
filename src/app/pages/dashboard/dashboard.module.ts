@@ -10,6 +10,7 @@ import { ActualReservationComponent } from './components/actual-reservation/actu
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { HistoricReservationsComponent } from './components/historic-reservations/historic-reservations.component';
 import { Error404Component } from './components/error-404/error-404.component';
+import { UsersListComponent } from './components/users-list/users-list.component';
 
 
 
@@ -19,7 +20,8 @@ import { Error404Component } from './components/error-404/error-404.component';
         NewReservationComponent,
         ActualReservationComponent,
         HistoricReservationsComponent,
-        Error404Component
+        Error404Component,
+        UsersListComponent
     ],
     imports: [
         CommonModule,

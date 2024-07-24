@@ -5,6 +5,7 @@ import { NewReservationComponent } from './components/new-reservation/new-reserv
 import { ActualReservationComponent } from './components/actual-reservation/actual-reservation.component';
 import { HistoricReservationsComponent } from './components/historic-reservations/historic-reservations.component';
 import { Error404Component } from './components/error-404/error-404.component';
+import { UsersListComponent } from './components/users-list/users-list.component';
 const routes: Routes = [{
     path: '',
     component: DashboardComponent,
@@ -39,9 +40,23 @@ const routes: Routes = [{
             },
         },
         {
-            path: '**',
-            component: Error404Component
+            path: 'administracion',
+            children: [
+                {
+                    path: 'usuarios',
+                    component: UsersListComponent,
+                    data: {
+                        title: "Usuarios",
+                        breadcrumb: "Usuarios",
+                    },
+                },
+                {
+                    path: '**',
+                    component: Error404Component
+                },
+            ]
         },
+        
     ]
 }];
 
