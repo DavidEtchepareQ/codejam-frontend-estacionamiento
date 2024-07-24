@@ -1,0 +1,51 @@
+<form *ngIf="form" class="form-signin text-center" [formGroup]="form" (ngSubmit)="login()">
+
+    <h2 class="form-signin-heading text-center fw-bold mb-2">
+        INICIAR SESIÓN
+    </h2>
+
+
+    <div class="font-porta w-100">
+        Correo electrónico
+    </div>
+
+    <input type="text" class="form-control text-center" formControlName="email" placeholder="Ingrese correo electrónico"
+        [ngClass]="{
+        'is-invalid':
+            !form.get('email').valid &&
+            (form.get('email').touched || form.get('email').dirty || submitted),
+        'is-valid': form.get('email').valid && submitted
+}" />
+
+    <div class="small text-danger text-center"
+        *ngIf="form.get('email').errors && (form.get('email').touched || form.get('email').dirty || submitted)">
+        <div *ngIf="form.get('email').errors['required']">Este campo es requerido</div>
+    </div>
+
+    <div class="font-porta w-100 mt-3">
+        Contraseña
+    </div>
+    <input type="password" class="form-control text-center" formControlName="password"
+        placeholder="Ingrese contraseña" [ngClass]="{
+    'is-invalid':
+        !form.get('password').valid &&
+        (form.get('password').touched || form.get('password').dirty || submitted),
+    'is-valid': form.get('password').valid && submitted
+}" />
+
+    <div class="small text-danger text-center"
+        *ngIf="form.get('password').errors && (form.get('password').touched || form.get('password').dirty || submitted)">
+        <div *ngIf="form.get('password').errors['required']">Este campo es requerido</div>
+    </div>
+
+    <button class="btn btn-lg btn-dark btn-block w-100 font-porta small mt-4" type="submit" [disabled]="loading">
+        <ng-container *ngIf="!loading; else loadingTmp">
+            INGRESAR
+        </ng-container>
+    </button>
+
+    <ng-template #loadingTmp>
+        Autenticando...
+    </ng-template>
+
+</form>
